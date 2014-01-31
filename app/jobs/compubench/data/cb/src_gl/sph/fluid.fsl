@@ -1,0 +1,61 @@
+#ifdef GL_ES
+precision mediump float;  
+#endif
+
+uniform samplerCube _cubeTexture;
+uniform float _cover;
+
+varying vec3 redRefractTexCoord;
+varying vec3 blueRefractTexCoord;
+varying vec3 greenRefractTexCoord;
+varying vec3 reflectTexCoord;
+varying float ratio;
+
+varying vec3 normal;
+varying vec3 eyeVector;
+varying vec3 lightDirection;
+
+void main()
+{
+	vec3 refractColor;
+	refractColor.r	= textureCube(_cubeTexture, normalize(redRefractTexCoord)).r;
+	refractColor.g	= textureCube(_cubeTexture, normalize(greenRefractTexCoord)).g;
+	refractColor.b	= textureCube(_cubeTexture, normalize(blueRefractTexCoord)).b;
+
+	vec3 reflectColor = textureCube(_cubeTexture, normalize(reflectTexCoord)).rgb;
+
+	//gl_FragColor = vec4(reflectColor, 1.0);
+	//gl_FragColor = vec4(refractColor, 1.0);
+	gl_FragColor = vec4(mix(refractColor, reflectColor, ratio), _cover);
+	//gl_FragColor = vec4(vec3(0.0), _cover);
+
+	vec3 N = normalize(normal);
+	vec3 E = -normalize(eyeVector);
+
+	float tension = dot(-E, N);
+	if(0.0 <= tension /*&& tension < 0.1 && _cover == 0.55*/)
+	{
+		gl_FragColor = mix(gl_FragColor, vec4(vec3(tension), 1.0), 1.0 - tension);
+	}
+
+	vec3 L = normalize(-lightDirection);
+
+
+	//gl_FragColor.rgb *= vec3(173.0/255.0, 234.0/255.0, 47.0/255.0); // original bright-green shade
+	gl_FragColor.rgb *= vec3(94.0/255.0, 148.0/255.0, 60.0/255.0); // darker green shade
+	//gl_FragColor.rgb *= vec3(0.01, 0.02, 0.12);
+	//gl_FragColor.rgb *= vec3(1.0, 0.0, 0.0);
+
+	const float _invShineRadius = 40.0;
+	const float _shininess = 2.0;
+	float lambertTerm = dot(N,L);
+	if(lambertTerm > 0.0 && _cover == 0.55)
+	{
+		//vec3 E = -normalize(eyeVector);
+		vec3 R = reflect(-L, N);
+		float specularIntensity = _shininess*pow( max(dot(R,E), 0.0), _invShineRadius);
+
+		gl_FragColor += vec4(specularIntensity);
+		//gl_FragColor = min(gl_FragColor, vec4(1.0)); //already has
+	}
+}

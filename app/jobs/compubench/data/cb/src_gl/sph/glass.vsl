@@ -1,0 +1,22 @@
+#ifdef GL_ES
+precision highp float;  
+#endif
+
+uniform mat4	_modelMatrix;
+uniform mat4	_invModelMatrix;
+uniform mat4	_modelViewProjectionMatrix;
+uniform vec3	_viewPosition;
+
+attribute vec3	_normal;
+attribute vec3	_vertex;
+
+varying vec3	normal;
+varying vec3	eyeVector;
+
+void main()
+{
+	eyeVector = (_modelMatrix * vec4(_vertex, 1.0)).xyz - _viewPosition;
+	normal = normalize((vec4(_normal, 0.0)*_invModelMatrix).xyz);
+
+	gl_Position = _modelViewProjectionMatrix * vec4(_vertex, 1.0);
+}

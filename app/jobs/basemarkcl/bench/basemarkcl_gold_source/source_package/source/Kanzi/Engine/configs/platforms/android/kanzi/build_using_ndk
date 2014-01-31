@@ -1,0 +1,3 @@
+#!/bin/bash
+ndk-build
+find obj -name "*.a" -print0 |xargs -0 -I LIB cp LIB ../../../../lib/android/ES2_Debug/

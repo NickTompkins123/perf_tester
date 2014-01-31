@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="openvg_11_ri"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(SolutionDir)..\..\..\libraries\platforms\win32\openvg_1_1\include;$(SolutionDir)..\..\..\libraries\common\openvg_1_1_ri\include"
+		PreprocessorDefinitions="KZ_OPENVG_VERSION=KZ_OPENVG_1_1"
+	/>
+</VisualStudioPropertySheet>

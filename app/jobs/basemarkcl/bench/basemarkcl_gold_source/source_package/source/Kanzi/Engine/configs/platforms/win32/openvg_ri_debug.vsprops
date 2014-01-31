@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="openvg_ri_debug"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\libraries\common\openvg_1_1_ri\project\ri\include"
+		PreprocessorDefinitions="KZ_OPENGL_VERSION=KZ_OPENGL_NONE;KZ_OPENVG_VERSION=KZ_OPENVG_1_1"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="libOpenVG.lib"
+		AdditionalLibraryDirectories="$(KanziEnginePath)\libraries\common\openvg_1_1_ri\project\lib"
+	/>
+</VisualStudioPropertySheet>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PerfTester</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Perf Tester</a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Browse Revisions", revision_list_path %></li>
+      <li><%= link_to "Start Testing", new_revision_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="span9">
+      <% flash.each do |name, msg| -%>
+        <div class="alert alert-info"><%= msg %></div>
+      <% end -%>
+
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

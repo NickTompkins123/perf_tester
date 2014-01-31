@@ -1,0 +1,120 @@
+newmtl carbon_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.03 0.03 0.03
+newmtl chrome_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.69 0.69 0.69
+newmtl corner_buildings_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd corner_buildings.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl ferrari_body_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.35 0.35 0.35
+newmtl ferrari_headlight_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.20 0.20 0.20
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.19 0.19 0.19
+newmtl ferrari_window_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.28 0.28 0.28
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.36 0.36 0.36
+newmtl full_diffuse_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl houseblock_trees_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd house_block.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl houseblock_windows_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd house_block.tga
+Ni 1.00
+Ks 0.34 0.34 0.34
+newmtl inside_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ferrari_floor_roof.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl leaves_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd house_block.tga
+Ni 1.85
+Ks 0.00 0.00 0.00
+newmtl metal_props_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd house_block.tga
+Ni 1.00
+Ks 0.63 0.63 0.63
+newmtl ponyva_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wall_temple_props.tga
+Ni 1.75
+Ks 0.00 0.00 0.00
+newmtl wall_temple_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wall_temple_props.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl windows_SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd corner_buildings.tga
+Ni 1.00
+Ks 0.31 0.31 0.31

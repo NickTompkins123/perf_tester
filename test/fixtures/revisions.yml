@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+fst:
+  name: 920000
+  path: C:/Projects/dist.920000/
+  description: Some cool description
+  env: HSA_RUNTIME=1;SOME_VAR="Hello world"
+
+scnd:
+  name: 920001
+  path: C:/Projects/dist.920001/
+
+thrd:
+  name: 920002
+  path: C:/Projects/dist.920002/
+
+frth:
+  name: 920003
+  path: C:/Projects/dist.920003/

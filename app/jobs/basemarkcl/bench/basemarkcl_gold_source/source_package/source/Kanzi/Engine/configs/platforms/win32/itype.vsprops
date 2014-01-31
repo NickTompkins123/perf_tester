@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="itype"
+	>
+    <Tool 
+        Name="VCCLCompilerTool" 
+        PreprocessorDefinitions="KZ_ITYPE_ENABLED"
+    />
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="itype.lib"
+	/>
+</VisualStudioPropertySheet>

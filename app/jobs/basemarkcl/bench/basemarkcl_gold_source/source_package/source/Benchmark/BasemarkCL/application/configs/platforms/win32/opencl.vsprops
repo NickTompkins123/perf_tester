@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="opencl"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="..\..\..\libraries\common\opencl\include"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="OpenCL.lib OpenGL32.lib"
+		AdditionalLibraryDirectories="..\..\..\libraries\platforms\win32\opencl\lib"
+	/>
+		
+</VisualStudioPropertySheet>

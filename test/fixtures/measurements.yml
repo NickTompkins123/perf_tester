@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+<%
+suites = [:suite2, :sub_suite11, :sub_suite12, :sub_suite13, :sub_suite14, :sub_suite31, :sub_suite32]
+revisions = [:fst, :scnd, :thrd, :frth]
+n = 0
+
+revisions.each do |rev|
+  suites.each do |s|
+    n += 1
+%>
+    measurement_<%= n %>:
+      suite: <%= s %>
+      revision: <%= rev %>
+      value: <%= rand * 100 %>
+<%
+ end
+end
+%>

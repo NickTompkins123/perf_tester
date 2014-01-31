@@ -1,0 +1,8 @@
+engine_root = "../../../../../../Kanzi/Engine"
+
+# project_root = "../../.."
+# platform = "android"
+
+# Hand over the execution over to the build.py in Engine config 
+execfile(engine_root + "/scripts/build.py")
+    

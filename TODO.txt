@@ -1,0 +1,73 @@
+perf_tester -*- mode: org -*-
+#+SEQ_TODO: TODO(t) STARTED(s) WAITING(w) | DONE(d) CANCELLED(c)
+#+STARTUP: showall
+
+* Set up basic interface
+
+** DONE List of revisions
+
+** DONE Add bootstrap
+
+** DONE List of all measurements for revision by clicking on revision
+
+** DONE List of all measurements for suite by clicking on suite from previous screen
+
+* Dalayed job
+
+** DONE Set up dummy job
+
+** DONE Add SHOC
+
+** DONE Test ENV
+
+** DONE Display notification message
+
+** DONE Display form errors
+
+** DONE Add CompuBench
+
+** DONE Refactor tests
+
+** DONE Add ability to specify env variables for revision
+
+** DONE Form error on non existent revision path
+
+** DONE Implement compare of measurements for two revisions
+
+** DONE Add BasemarkCL
+
+** Release!
+*** GitHub
+*** Tests on dev machine
+*** Install server
+*** Ensure that all env is correctly set
+*** Check that results are reliable
+*** Tune good_or_bad threshold to reduce false regressions
+
+** Refactor
+*** !!! Add measurements via add_or_update_measurement method in suite. It will prevent multiple measurements in case of failed jobs
+*** Store all information about benchmarks in one convenient place - Database? DSL?
+*** How to isomorphically define suites and database objects?
+*** Remove copypaste across compubench and basemarc
+*** Remove junk in templates with measurements. Add helper to yield postordered suites.
+*** Specify return value of compare_revisions
+*** Follow Rails style guideline in compare_revisions view-controller
+
+** Time machine integration
+*** Add rake task for scheduling new revisions
+*** Add is_automatic flag
+*** Determine what is baseline, in measurements_list do compare with baseline or make comparing with baseline very easy depends on how bad is compare perfomance
+
+** Delayed job monitoring
+
+** Deal with failures and hangs, set up max_attempts
+
+* Nicer main page
+
+* Think of something to configure tests to run with or without running jobs
+
+* Error handling (at least do something with 404)
+
+* Check for generated code changes
+
+* Add some deployment tool

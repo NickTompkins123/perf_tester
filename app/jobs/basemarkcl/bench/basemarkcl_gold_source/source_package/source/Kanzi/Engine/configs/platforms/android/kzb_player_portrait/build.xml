@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="KZBPlayerPortrait" default="help">
+    <property file="local.properties" />
+    <property file="build.properties" />
+    <property file="default.properties" />
+
+    <path id="android.antlibs">
+        <pathelement path="${sdk.dir}/tools/lib/anttasks.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/sdklib.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/androidprefs.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/apkbuilder.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/jarutils.jar" />
+    </path>
+
+    <taskdef name="setup"
+        classname="com.android.ant.SetupTask"
+        classpathref="android.antlibs" />
+
+    <setup />
+    
+    <target name="-package-resources">
+        <!--
+        <echo>Copying resources</echo>
+        <copy todir="${asset.absolute.dir}" file="${asset.absolute.dir}/../../../../bin/binaries.cfg" />
+        <copy todir="${asset.absolute.dir}" file="${asset.absolute.dir}/../../../../bin/binary.kzb" />
+        -->
+        
+        <echo>Packaging resources</echo>
+        <aaptexec executable="${aapt}"
+                command="package"
+                manifest="AndroidManifest.xml"
+                assets="${asset.absolute.dir}"
+                androidjar="${android.jar}"
+                apkfolder="${out.absolute.dir}"
+                apkbasename="${ant.project.name}">
+            <res path="${resource.absolute.dir}" />
+            <nocompress extension="kzb" />
+        </aaptexec>
+    </target>    
+
+</project>

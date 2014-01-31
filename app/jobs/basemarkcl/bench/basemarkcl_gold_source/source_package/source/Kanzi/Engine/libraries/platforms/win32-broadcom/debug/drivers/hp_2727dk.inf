@@ -1,0 +1,72 @@
+; Installation INF for the Cypress Generic USB Driver for Windows 98ME/2000/XP
+;
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+provider=%PROVIDER%
+
+
+[SourceDisksNames]
+1=%CYUSB_INSTALL%,,,
+
+[SourceDisksFiles]
+CyUsb.sys = 1
+
+[Manufacturer]
+%MFGNAME%=Cypress
+
+[Cypress]
+; Cypress FX2LP default ID
+%VID_0a5c&PID_2727.DeviceDesc%=CyUsb, USB\VID_0A5C&PID_2727
+
+[DestinationDirs]
+CyUsbME.Files.Ext = 10,System32\Drivers
+CyUsb.Files.Ext = 10,System32\Drivers
+
+[CyUsb]
+CopyFiles=CyUsbME.Files.Ext
+AddReg=CyUsbME.AddReg
+
+[CyUsb.HW]
+AddReg=CyUsb.AddReg.Guid
+
+[CyUsb.NT]
+CopyFiles=CyUsb.Files.Ext
+AddReg=CyUsb.AddReg
+
+[CyUsb.NT.HW]
+AddReg=CyUsb.AddReg.Guid
+
+[CyUsb.NT.Services]
+Addservice = CyUsb, 0x00000002, CyUsb.AddService
+
+[CyUsb.AddService]
+DisplayName    = %CyUsb.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\CyUsb.sys
+LoadOrderGroup = Base
+
+[CyUsb.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,CyUsb.sys
+
+[CyUsb.Files.Ext]
+CyUsb.sys
+
+[CyUsb.AddReg.Guid]
+;HKR,,DriverGUID,,%CyUsb.GUID%
+
+;---------------------------------------------------------------;
+
+[Strings]
+PROVIDER="Broadcom"
+MFGNAME="Broadcom"
+CYUSB_INSTALL="Broadcom USB Host Port"
+VID_0A5C&PID_2727.DeviceDesc="Broadcom USB Host Port"
+CyUsb.SvcDesc="Broadcom USB Host Port driver"
+
+;CyUsb.GUID="{AE18AA60-7F6A-11d4-97DD-00010229B959}"

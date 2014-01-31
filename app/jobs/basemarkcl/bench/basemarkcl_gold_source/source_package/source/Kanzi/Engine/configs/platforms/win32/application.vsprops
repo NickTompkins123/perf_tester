@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="application"
+	InheritedPropertySheets=".\kanzi.vsprops"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\sources\application_framework\common\src;$(KanziEnginePath)\sources\user_layer\src;$(KanziEnginePath)\sources\core_layer\src;$(KanziEnginePath)\sources\system_layer\common\src;$(KanziEnginePath)\sources\lua_wrapper\src"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+	/>
+	<UserMacro
+		Name="ProjectRootPath"
+		Value="..\..\.."
+	/>
+</VisualStudioPropertySheet>

@@ -1,0 +1,5 @@
+<tr>
+  <td><%= ('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' * depth + suite.name).html_safe %></td>
+  <% m = suite.get_measurement_for_revision(@revision) %>
+  <td><%= if m.nil? then '---' else m.value end %></td>
+</tr>

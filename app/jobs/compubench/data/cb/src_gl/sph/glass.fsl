@@ -1,0 +1,39 @@
+#ifdef GL_ES
+precision mediump float;  
+#endif
+
+uniform samplerCube _cubeTexture;
+uniform vec3		_lightDirection;	// vec3(0.0f, -1.0, 0.0)
+uniform float		_fresnelExponent;	// 5.0
+uniform float		_invShineRadius;	// 40.0
+uniform float		_shininess;			// 2.0
+uniform float		_cover;
+uniform float		_eta;
+
+varying vec3	normal;
+varying vec3	eyeVector;
+
+void main()
+{
+	vec3 N = normalize(normal);
+	vec3 E = normalize(eyeVector);
+	vec3 L = normalize(-_lightDirection);
+
+	vec3 refractColor = textureCube(_cubeTexture, normalize(refract(E, N, _eta))).rgb;
+	vec3 reflectColor = textureCube(_cubeTexture, normalize(reflect(E, N))).rgb;
+
+	float fresnelFactor = ((1.0-_eta)*(1.0-_eta))/((1.0+_eta)*(1.0+_eta));
+	float fresnelRatio = clamp(	fresnelFactor + (1.0 - fresnelFactor)*pow((1.0 - dot(E, N)), _fresnelExponent), 0.0, 1.0);
+
+	gl_FragColor = vec4(mix(refractColor, reflectColor, fresnelRatio), _cover);
+
+	float lambertTerm = dot(N,L);
+	if(lambertTerm > 0.0)
+	{
+
+		vec3 R = reflect(-L, N);
+		float specularIntensity = _shininess*pow( max(dot(R,E), 0.0), _invShineRadius);
+
+		gl_FragColor += vec4(specularIntensity);
+	}
+}

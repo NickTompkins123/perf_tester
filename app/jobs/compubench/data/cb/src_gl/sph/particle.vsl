@@ -1,0 +1,25 @@
+//uniform mat4	_viewMatrix;
+uniform mat4	_modelMatrix;
+uniform mat4	_modelViewMatrix;
+uniform mat4	_modelViewProjectionMatrix;
+uniform vec3	_eyePosition;
+uniform float	_pointSize;
+
+attribute vec3	_vertex;
+attribute vec4	_color;
+
+varying vec3	eyeVector;
+varying vec4	color;
+
+void main()
+{
+	eyeVector = (_modelMatrix * vec4(_vertex, 1.0)).xyz - _eyePosition;
+
+	color = _color;
+
+	vec4 tmp = _modelViewMatrix * vec4(_vertex, 1.0);
+
+	gl_PointSize = _pointSize * sqrt(1.0 / (tmp.z*tmp.z));
+
+	gl_Position = _modelViewProjectionMatrix * vec4(_vertex, 1.0);
+}

@@ -1,0 +1,459 @@
+<?xml version="1.0" standalone="no" ?>
+<GLB_TESTS>
+    <maior_version>2</maior_version>
+    <minor_version>7</minor_version>
+    <bugfix_version>0</bugfix_version>
+    <default_offscreen_width>1920</default_offscreen_width>
+    <default_offscreen_height>1080</default_offscreen_height>
+    <!--community-->
+    <test>
+        <id>2700101</id>
+        <name>GLB27_TRex_C24Z16_Offscreen</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_trex.xml</scenefile>
+        <type>C24Z16 Offscreen</type>
+        <title>GLBenchmark 2.7 T-Rex HD</title>
+        <description>GLBenchmark 2.7 T-Rex HD is an OpenGL ES 2.0 based high-level gaming test, that stresses both the vertex and fragment shader side with its highly detailed geometry and visually stunning effects: parallax mapping for detailed ground, animated particles, motion blur for cinematic visual experience and more realistic shadows with self-shadows. The test is optimized for 1080p. Configuration: 24 bpp color and 16 bpp depth buffers. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>56000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>16</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>1</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2700100</id>
+        <name>GLB27_TRex_C24Z16</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_trex.xml</scenefile>
+        <type>C24Z16 Onscreen</type>
+        <title>GLBenchmark 2.7 T-Rex HD</title>
+        <description>GLBenchmark 2.7 T-Rex HD is an OpenGL ES 2.0 based high-level gaming test, that stresses both the vertex and fragment shader side with its highly detailed geometry and visually stunning effects: parallax mapping for detailed ground, animated particles, motion blur for cinematic visual experience and more realistic shadows with self-shadows. The test is optimized for 1080p. Configuration: 24 bpp color and 16 bpp depth buffers.</description>
+        <play_time>56000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>16</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>1</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2700700</id>
+        <name>GLB27_TRex_C24Z24MS4</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_trex.xml</scenefile>
+        <type>C24Z24MS4 Onscreen</type>
+        <title>GLBenchmark 2.7 T-Rex HD</title>
+        <description>GLBenchmark 2.7 T-Rex HD is an OpenGL ES 2.0 based high-level gaming test, that stresses both the vertex and fragment shader side with its highly detailed geometry and visually stunning effects: parallax mapping for detailed ground, animated particles, motion blur for cinematic visual experience and more realistic shadows with self-shadows. The test is optimized for 1080p. Configuration: 24 bpp color and depth buffers, 4x anti-aliasing.</description>
+        <play_time>56000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>24</depth_bpp>
+        <fsaa>4</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>1</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2700801</id>
+        <name>GLB27_TRex_C24Z16_FixedTimeStep_Offscreen</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_trex.xml</scenefile>
+        <type>C24Z16 Offscreen Fixed timestep</type>
+        <title>GLBenchmark 2.7 T-Rex HD</title>
+        <description>GLBenchmark 2.7 T-Rex HD is an OpenGL ES 2.0 based high-level gaming test, that stresses both the vertex and fragment shader side with its highly detailed geometry and visually stunning effects: parallax mapping for detailed ground, animated particles, motion blur for cinematic visual experience and more realistic shadows with self-shadows. The test is optimized for 1080p. Configuration: 24 bpp color and 16 bpp depth buffers. Fixed timestep: fixed number of frames are rendered and rendering time is taken as unit of measurement, lower time means higher performance. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>56000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>16</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>100</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>1</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2700800</id>
+        <name>GLB27_TRex_C24Z16_FixedTimeStep</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_trex.xml</scenefile>
+        <type>C24Z16 Onscreen Fixed timestep</type>
+        <title>GLBenchmark 2.7 T-Rex HD</title>
+        <description>GLBenchmark 2.7 T-Rex HD is an OpenGL ES 2.0 based high-level gaming test, that stresses both the vertex and fragment shader side with its highly detailed geometry and visually stunning effects: parallax mapping for detailed ground, animated particles, motion blur for cinematic visual experience and more realistic shadows with self-shadows. The test is optimized for 1080p. Configuration: 24 bpp color and 16 bpp depth buffers. Fixed timestep: fixed number of frames are rendered and rendering time is taken as unit of measurement, lower time means higher performance.</description>
+        <play_time>56000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>16</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>100</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>1</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2700901</id>
+        <name>GLB27_EgyptHD_inherited_C24Z16_Offscreen</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_egypt.xml</scenefile>
+        <type>C24Z16 Offscreen</type>
+        <title>GLBenchmark 2.5 Egypt HD</title>
+        <description>GLBenchmark 2.5 Egypt HD is an OpenGL ES 2.0 based high-level gaming test. This test utilizes complex geometry stressing mainly the vertex shader side. It features high resolution textures, planar reflection, specular highlights and soft-shadows among other effects. The test is optimized for 1080p. Configuration: 24 bpp color and 16 bpp depth buffers. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>113000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>16</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2700900</id>
+        <name>GLB27_EgyptHD_inherited_C24Z16</name>
+        <engine>Engine2</engine>
+        <scenefile>scene_egypt.xml</scenefile>
+        <type>C24Z16 Onscreen</type>
+        <title>GLBenchmark 2.5 Egypt HD</title>
+        <description>GLBenchmark 2.5 Egypt HD is an OpenGL ES 2.0 based high-level gaming test. This test utilizes complex geometry stressing mainly the vertex shader side. It features high resolution textures, planar reflection, specular highlights and soft-shadows among other effects. The test is optimized for 1080p. Configuration: 24 bpp color and 16 bpp depth buffers.</description>
+        <play_time>113000</play_time>
+        <texture_type>Auto</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>16</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>160</min_ram_required>
+    </test>
+    <test>
+        <id>2710101</id>
+        <name>GLB27_FillTestC24Z16_Offscreen</name>
+        <engine>fillrate</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Offscreen</type>
+        <title>Fill rate</title>
+        <description>Measures the device&apos;s texturing performance by rendering 8x8 textured layers. Configuration: 24 bpp color and 16 bpp depth buffers. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710100</id>
+        <name>GLB27_FillTestC24Z16</name>
+        <engine>fillrate</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Onscreen</type>
+        <title>Fill rate</title>
+        <description>Measures the device&apos;s texturing performance by rendering 8x8 textured layers. Configuration: 24 bpp color and 16 bpp depth buffers.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710201</id>
+        <name>GLB27_TriangleTexTestC24Z16_Offscreen</name>
+        <engine>triangle_tex</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Offscreen</type>
+        <title>Triangle throughput: Textured</title>
+        <description>Measures the triangle throughput iteratively, rendering textured triangles. In each iteration, the rendered triangles are doubled. No lighting is computed. Configuration: 24 bpp color and 16 bpp depth buffers. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710200</id>
+        <name>GLB27_TriangleTexTestC24Z16</name>
+        <engine>triangle_tex</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Onscreen</type>
+        <title>Triangle throughput: Textured</title>
+        <description>Measures the triangle throughput iteratively, rendering textured triangles. In each iteration, the rendered triangles are doubled. No lighting is computed. Configuration: 24 bpp color and 16 bpp depth buffers.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710301</id>
+        <name>GLB27_TriangleTexVertexLitTestC24Z16_Offscreen</name>
+        <engine>triangle_vert</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Offscreen Vertex Lit</type>
+        <title>Triangle throughput: Textured</title>
+        <description>Measures the triangle throughput iteratively, rendering lit and textured triangles. In each iteration, the rendered triangles are doubled. The lighting is computed per vertex. Configuration: 24 bpp color and 16 bpp depth buffers. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710300</id>
+        <name>GLB27_TriangleTexVertexLitTestC24Z16</name>
+        <engine>triangle_vert</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Onscreen Vertex Lit</type>
+        <title>Triangle throughput: Textured</title>
+        <description>Measures the triangle throughput iteratively, rendering lit and textured triangles. In each iteration, the rendered triangles are doubled. The lighting is computed per vertex. Configuration: 24 bpp color and 16 bpp depth buffers.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710401</id>
+        <name>GLB27_TriangleTexFragmentLitTestC24Z16_Offscreen</name>
+        <engine>triangle_frag</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Offscreen Fragment Lit</type>
+        <title>Triangle throughput: Textured</title>
+        <description>Measures the triangle throughput iteratively, rendering lit and textured triangles. In each iteration, the rendered triangles are doubled. The lighting is computed per pixel. Configuration: 24 bpp color and 16 bpp depth buffers. Offscreen: Frames are rendered onto a virtual screen. An onscreen-mosaic is used for feedback.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>1</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+    <test>
+        <id>2710400</id>
+        <name>GLB27_TriangleTexFragmentLitTestC24Z16</name>
+        <engine>triangle_frag</engine>
+        <scenefile></scenefile>
+        <type>C24Z16 Onscreen Fragment Lit</type>
+        <title>Triangle throughput: Textured</title>
+        <description>Measures the triangle throughput iteratively, rendering lit and textured triangles. In each iteration, the rendered triangles are doubled. The lighting is computed per pixel. Configuration: 24 bpp color and 16 bpp depth buffers.</description>
+        <play_time>10000</play_time>
+        <texture_type>888</texture_type>
+        <viewport_width>-1</viewport_width>
+        <viewport_height>-1</viewport_height>
+        <color_bpp>24</color_bpp>
+        <depth_bpp>-1</depth_bpp>
+        <fsaa>0</fsaa>
+        <stencil_bpp>-1</stencil_bpp>
+        <fullscreen>0</fullscreen>
+        <endless>0</endless>
+        <frame_step_time>-1</frame_step_time>
+        <battery>0</battery>
+        <brightness>-1.0</brightness>
+        <fps_limit>-1.0</fps_limit>
+        <single_frame>-1</single_frame>
+        <max_rendered_frames>-1</max_rendered_frames>
+        <start_animation_time>0</start_animation_time>
+        <hybrid_refresh_msec>40</hybrid_refresh_msec>
+        <zprepass>0</zprepass>
+        <screenmode>0</screenmode>
+        <min_ram_required>-1</min_ram_required>
+    </test>
+</GLB_TESTS>

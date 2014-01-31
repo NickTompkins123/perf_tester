@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="debug"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		Optimization="0"
+		PreprocessorDefinitions="_DEBUG"
+		MinimalRebuild="false"
+		RuntimeLibrary="3"
+		DebugInformationFormat="1"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		LinkIncremental="2"
+		AdditionalLibraryDirectories="&quot;$(KanziEnginePath)\libraries\platforms\win32\libpng\Debug&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\zlib\Debug&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\libjpeg\Debug&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\itype\Debug&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\freetype\Debug&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\lua\debug&quot;"
+		GenerateDebugInformation="true"
+		SubSystem="1"
+		TargetMachine="1"
+	/>
+</VisualStudioPropertySheet>

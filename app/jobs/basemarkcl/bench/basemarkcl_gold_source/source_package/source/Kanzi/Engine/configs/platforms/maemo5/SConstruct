@@ -1,0 +1,34 @@
+# TODO: THIS FILE IS OUTDATED (and obsolete?), don't use as a template
+
+# The following are automated in the common build.py (or engine_root finding in this file)
+#   but can be manually overridden below
+# engine_root = "../../../../../../Kanzi/Engine"    
+# project_root = "../../.."
+# platform = "maemo5"
+
+# TODO: figure how to invoke the common/build.py so that this could be done there (setting paths?)
+# assumption: Engine can be found from one of parent directories
+# example: Kanzi Examples, Internal projects in SVN structure
+# if fails: Error and halt
+from os import sep 
+try:
+    engine_root
+except:    
+    def find_kanzi_root():
+        from os.path import exists  # function encapsulation keeps the imports out of the global scope
+        from os import getcwd
+        path = getcwd()
+        while path:
+            candidate = path + sep + "Kanzi" + sep + "Engine"
+            if exists(candidate):
+                return candidate
+            path = sep.join(path.split(sep)[0:-1])      # go one level up
+        print "Kanzi Engine root directory not found! Please set in manually in the SConstruct file."
+        Exit(1)
+    engine_root = find_kanzi_root()
+common_config_dir = engine_root + sep + "configs" + sep + "platforms" + sep + "common"
+
+
+# Hand over the execution over to the build.py in Engine config 
+execfile(common_config_dir + sep + "build.py")
+    

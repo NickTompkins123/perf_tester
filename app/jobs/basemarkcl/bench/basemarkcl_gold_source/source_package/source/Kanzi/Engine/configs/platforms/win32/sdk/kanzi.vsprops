@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="kanzi"
+	OutputDirectory="$(KanziEnginePath)/output/$(PlatformName)/$(ConfigurationName)"
+	IntermediateDirectory="$(KanziEnginePath)/output/$(PlatformName)/$(ConfigurationName)/intermediate/$(ProjectName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalOptions="/we4002 /we4013 /we4028 /we4029 /we4133 /we4715 /we4716&#x0D;&#x0A;/wd4001 /wd4100 /wd4702"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\libraries\common\libpng\include;$(KanziEnginePath)\libraries\common\zlib\include;$(KanziEnginePath)\libraries\common\libjpeg\include;$(KanziEnginePath)\libraries\common\freetype\include;$(KanziEnginePath)\libraries\common\lua\include"
+		PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS;WIN32;_CONSOLE;KZ_INLINE=static __inline"
+		ExceptionHandling="0"
+		DisableLanguageExtensions="true"
+		WarningLevel="4"
+		CompileAs="1"
+	/>
+	<Tool
+		Name="VCLibrarianTool"
+		AdditionalOptions="/ignore:4221"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalOptions="/ignore:4221"
+		AdditionalLibraryDirectories="$(KanziEnginePath)\lib\$(PlatformName)\$(ConfigurationName)"
+		AdditionalDependencies="zlib.lib libpng.lib libjpeg.lib freetype.lib lua5.1.lib tolua_lib.lib winmm.lib"
+	/>
+	<UserMacro
+		Name="KanziEnginePath"
+		Value="..\..\.."
+		InheritsFromParent="true"
+		Delimiter=";"
+	/>
+</VisualStudioPropertySheet>

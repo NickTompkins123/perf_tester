@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="release"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		Optimization="2"
+		EnableIntrinsicFunctions="true"
+		WholeProgramOptimization="true"
+		PreprocessorDefinitions="NDEBUG"
+		RuntimeLibrary="2"
+		EnableFunctionLevelLinking="true"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		LinkIncremental="1"
+		AdditionalLibraryDirectories="&quot;$(KanziEnginePath)\libraries\platforms\win32\libpng\Release&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\zlib\Release&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\libjpeg\Release&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\itype\Release&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\freetype\Release&quot;;&quot;$(KanziEnginePath)\libraries\platforms\win32\lua\release&quot;"
+		GenerateDebugInformation="true"
+		SubSystem="2"
+		OptimizeReferences="2"
+		EnableCOMDATFolding="2"
+		LinkTimeCodeGeneration="1"
+		TargetMachine="1"
+	/>
+</VisualStudioPropertySheet>

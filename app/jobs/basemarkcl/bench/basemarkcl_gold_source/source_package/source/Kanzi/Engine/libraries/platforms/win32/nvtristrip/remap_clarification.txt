@@ -1,0 +1,23 @@
+From: http://www.gamedev.net/community/forums/topic.asp?topic_id=343554
+
+Heh, I admit my post was a bit rushed and I sort of converted code to "regular" text on the fly...
+
+What happens is that all primitive indices are looped through. For each index to a vertex, we see if that vertex has been used already. If it has, then we'll use the index to when it was first used. If it has not been used yet, we allocate a new index by using the current number of vertices.
+
+An example is always fun:
+
+Vertex bucket = some 4 vertices (think of them forming a tetrahedron to make things easier)
+Computed index-list = 3 'stripped triangles' = [3, 2, 0, 1, 3]
+
+That looks like a jumbled mess, which is bad when we got indices up to a few hundreds.
+If the remapper would have a mind, it would think like this:
+
+"First I got vertex #3, I'll call that #0 since it's first. Next comes #2, I'll call it #1. #0 becomes #2, #1 becomes #3... Hey, I remember #3, I got it somewhere here! Ah yes, I called it #0."
+
+Remapped = [0, 1, 2, 3, 0]
+
+By comparing the old and the remapped lists, we see that vertex #3 should be stored as vertex #0, vertex #2 should be stored as vertex #1 etc. This can be done by allocating a new vertex bucket, looping through the first index list and lookup vertices. Copy them one by one to the position shown in the remapped list. Voila, a crude form of a vertex cache optimizer! I wonder why they didn't return the permutation table (or whatever it's called) along with the remapped index list, I probably chose to describe a rather inefficient way to remap the vertices...
+
+Hope that will clear up the remap-function, now maybe I'll start to use it too 
+
+llindqvi: note, It seems that RemapIndices can only be used if there is only one cluster (or can be used only for one cluster (the largest one?)

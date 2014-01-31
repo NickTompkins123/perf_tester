@@ -1,0 +1,98 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+####
+# Dummy suites
+####
+suite1:
+  name: First benchnmark
+  description: This is very good benchmark. Probably best.
+  job_class: DummyBenchmarkJob
+
+suite2:
+  name: Second benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  job_class: DummyBenchmarkJob
+
+suite3:
+  name: Third benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+
+sub_suite11:
+  name: First child of first benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  parent_suite: suite1
+
+sub_suite12:
+  name: Second child of first benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  parent_suite: suite1
+
+sub_suite13:
+  name: Third child of first benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  parent_suite: suite1
+
+sub_suite14:
+  name: Fourth child of first benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  parent_suite: suite1
+
+sub_suite31:
+  name: First child of third benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  parent_suite: suite3
+
+sub_suite32:
+  name: Second child of third benchmark
+  description: This is very good benchmark. Maybe even better then the first.
+  parent_suite: suite3
+
+####
+# SHOC
+####
+
+shoc32:
+  name: SHOC 32bit
+  job_class: Shoc32BenchmarkJob
+
+shoc32-fft:
+  name: FFT
+  parent_suite: shoc32
+
+shoc32-fft-DP-FFT-INV_AMD:
+  name: DP-FFT-INV_AMD
+  parent_suite: shoc32-fft
+
+shoc64:
+  name: SHOC 64bit
+  job_class: Shoc64BenchmarkJob
+
+shoc64-fft:
+  name: FFT
+  parent_suite: shoc64
+
+shoc64-fft-DP-FFT-INV_AMD:
+  name: DP-FFT-INV_AMD
+  parent_suite: shoc64-fft
+
+####
+# CompuBench
+####
+
+compubench:
+  name: CombpuBench
+
+compubench-facedetect:
+  name: Face detection
+  parent_suite: compubench
+
+####
+# BasemarkCL
+####
+
+basemark:
+  name: BasemarkCL
+
+basemark-softbody:
+  name: Soft Body Test
+  parent_suite: basemark

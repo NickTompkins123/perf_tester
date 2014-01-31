@@ -1,0 +1,8 @@
+import os
+
+engine_root = "../../../../../Kanzi/Engine"    
+project_root = "../../.."
+platform = "linux"
+
+# Hand over the execution over to the build.py in Engine config 
+execfile(os.path.join(engine_root, "scripts", "build.py"))

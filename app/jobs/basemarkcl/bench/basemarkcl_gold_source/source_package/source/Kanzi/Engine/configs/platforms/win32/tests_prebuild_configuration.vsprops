@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="tests_prebuild_configuration"
+	OutputDirectory="$(KanziEnginePath)/output/$(PlatformName)/$(ConfigurationName)/$(ProjectName)"
+	>
+	<Tool
+		Name="VCPreBuildEventTool"
+		CommandLine="call ..\win32_scripts\preconfig_build.bat $(SolutionDir)..\common $(ConfigurationName)"
+	/>
+</VisualStudioPropertySheet>

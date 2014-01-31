@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="ffmpeg"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="..\..\..\libraries\common\ffmpeg\include;..\..\..\libraries\common\ffmpeg\include_msv"
+		PreprocessorDefinitions="inline=__inline"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="avcodec.lib avformat.lib swscale.lib avutil.lib avfilter.lib"
+		AdditionalLibraryDirectories="..\..\..\libraries\platforms\win32\ffmpeg\lib"
+	/>
+</VisualStudioPropertySheet>

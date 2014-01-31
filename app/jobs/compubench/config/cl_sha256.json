@@ -1,0 +1,40 @@
+{
+	"test_id": "cl_sha256",
+	"env": {
+		"graphics": {
+			"versions": [
+				{
+					"type": "GL",
+					"major": 2,
+					"minor": 0
+				},
+				{
+					"type": "ES",
+					"major": 2,
+					"minor": 0
+				}
+			],
+			"config": {
+				"red_size": 8,
+				"green_size": 8,
+				"blue_size": 8,
+				"depth_size": 16,
+				"alpha_size": 0,
+				"samples": -1,
+				"exact": false
+			},
+			"fullscreen": false
+		},
+		"compute": {
+			"type": "CL",
+			"config_index": 0
+		},
+		"locale": "",
+		"width": 1024,
+		"height": 768
+	},
+	"title": "Bitcoin mining",
+	"description": "Simulates bitcoin mining with the SHA256 hash function",
+	"group": "Throughput",
+	"test_id_num": "30009"
+}

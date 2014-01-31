@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="broadcom"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\libraries\platforms\win32-broadcom\include"
+		PreprocessorDefinitions="KZ_OPENGL_VERSION=KZ_OPENGL_ES_2_0;KZ_OPENGL_PLATFORM=KZ_OPENGL_PLATFORM_NONE;KZ_OPENVG_VERSION=KZ_OPENGV_1_1"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="khclient.lib"
+		AdditionalLibraryDirectories="$(KanziEnginePath)\libraries\platforms\win32-broadcom\debug"
+	/>
+</VisualStudioPropertySheet>

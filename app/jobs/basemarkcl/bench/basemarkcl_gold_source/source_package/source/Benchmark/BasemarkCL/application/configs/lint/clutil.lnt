@@ -1,0 +1,5 @@
+++d_WIN32=1
+++d_MSC_VER=1
+-i"%PROJECT_PATH%\sources\"
+-i"%PROJECT_PATH%\libraries\common\opencl\include"
+applications.lnt

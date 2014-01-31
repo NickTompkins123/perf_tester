@@ -1,0 +1,211 @@
+#
+# SConstruct script for building applications with Kanzi library
+#   Mostly concerned with setting the right paths
+#   Also compiler/linker directives and macro re-definitions possible
+#
+#   Platform: ARM Mali / Telechips TCC8900 running Linux
+#   Project: Kanzi Library + example applications
+#
+
+try:                # test if all the settings have been given already, reset if not
+    platform
+    project_root
+    engine_root
+    print "MALI SCRIPT: Using predefined values for platform, project_root and engine_root"
+except:
+    platform = "linux_mali"                             # platform name defines the subdirectory from where to search for the component build scripts
+    project_root = "../../.."                           # path to root directory where output will be placed (under /output)
+    engine_root = "../../../../../Kanzi/Engine"         # path to the root of Kanzi engine
+
+common_utilities = engine_root + "/configs/platforms/common/common_utilities.py"    # Path to Products/Kanzi/Engine/configs/platforms/common/common_utilities.py from Products/Internal/HouseOfApps/configs/platforms/linux_mali
+execfile(common_utilities)                              # read in the functions that will be used for SCons configuration
+
+engine_root_from_util = "../../../../../Kanzi/Engine"   # path to the root of Kanzi engine from common_utilities.py 
+
+arm_library_root = engine_root_from_util + "/libraries/platforms/linux-arm"   # These paths are actually from /Kanzi/Engine/configs/platforms/common (where common_utilities.py is)
+common_library_root = engine_root_from_util + "/libraries/common"
+  
+sdk_library_root = "/usr/sdk/mali"                      # Path to platform libraries on //serenity
+
+compiler = "/usr/sdk/arm-2008q3/bin/arm-none-linux-gnueabi-gcc"
+cflags = "-mtune=arm1176jzf-s -march=armv6zk" # -mfloat-abi=hard -mfpu=vfp"
+
+archiver = "/usr/sdk/arm-2008q3/bin/arm-none-linux-gnueabi-ar"
+arm_include_path = "/usr/sdk/arm-2008q3/arm-none-linux-gnueabi/libc/usr/include"
+
+platform_defines = ["PNG_NO_MMX_CODE"]
+platform_libraries = ["itype", "Mali", "ts"]
+platform_exclude_strings = [".*freetype.*"]
+
+#===========================================
+# Define shared library paths for each configuration
+#===========================================
+
+
+config_es1 = linux_shared_library (
+    library_path = [
+        sdk_library_root + "/gles11",
+        arm_library_root + "/libts/lib"
+    ],
+    include_path = [
+        sdk_library_root + "/header",    
+        #common_library_root + "/opengl_es_1_1/include",
+        arm_library_root + "/libts/include"
+    ]
+)
+
+shared_libraries_es1 = {
+    "EGL"  : {"libname" : "EGL",        "config" : config_es1},
+    "GL"   : {"libname" : "GLESv1_CM",  "config" : config_es1},
+    "Mali" : {"libname" : "Mali",       "config" : config_es1},
+    "ts"   : {"libname" : "ts",         "config" : config_es1}
+}
+
+
+config_es2 = linux_shared_library (
+    library_path = [
+        sdk_library_root + "/gles20",
+        arm_library_root + "/libts/lib"
+    ],
+    include_path = [
+        sdk_library_root + "/header",
+        #common_library_root + "/opengl_es_2_0/include",
+        arm_library_root + "/libts/include"
+    ]
+)
+
+shared_libraries_es2 = {
+    "EGL"  : {"libname" : "EGL",    "config" : config_es2},
+    "GL"   : {"libname" : "GLESv2", "config" : config_es2},
+    "Mali" : {"libname" : "Mali",   "config" : config_es2},
+    "ts"   : {"libname" : "ts",     "config" : config_es2}
+}
+
+
+#===========================================
+# Static library paths
+#===========================================
+
+
+libjpeg_library_config = external_static_library (
+    library_path = [arm_library_root + "/libjpeg/lib"],
+    include_path = [common_library_root + "/libjpeg/include"]
+)
+    
+libpng_library_config = external_static_library (
+    library_path = [arm_library_root + "/libpng/lib"],
+    include_path = [
+        common_library_root + "/libpng/include",
+        common_library_root + "/zlib/include"
+    ]
+)
+
+zlib_library_config = external_static_library (
+    library_path = [arm_library_root + "/zlib/lib"],
+    include_path = [common_library_root + "/zlib/include"]
+)
+
+itype_library_config = external_static_library (
+    library_path = [arm_library_root + "/itype/lib"],
+    include_path = [
+        common_library_root + "/itype/include",
+        #"/home/jtakalai/projects/rightware/trunk/Kanzi/Engine/libraries/common/itype/include",
+        arm_library_root + "/itype/include"
+    ]
+)
+
+external_static_libraries_common = {
+    "libjpeg" : {"libname" : "jpeg", "config" : libjpeg_library_config},
+    "libpng"  : {"libname" : "png",  "config" : libpng_library_config},
+    "zlib"    : {"libname" : "z",    "config" : zlib_library_config},
+    "itype"   : {"libname" : "itype","config" : itype_library_config}
+}
+
+
+#===============================================
+# Define platforms
+#=============================================== 
+
+available_build_types = {
+
+    "release_es1" : build_configuration (
+        cc_flags = "-O2 " + cflags,
+        shared_libraries = [shared_libraries_es1],
+        static_libraries = [external_static_libraries_common],
+        cc = compiler,
+        ar = archiver,
+        export_path = True,
+        cpppath = arm_include_path,
+        defines = {"KZ_OPENGL_VERSION" : "KZ_OPENGL_ES_1_1"},
+        use_rpath = False
+    ),
+
+    "debug_es1" : build_configuration (
+        cc_flags = "-g -pg " + cflags,
+        shared_libraries = [shared_libraries_es1],
+        static_libraries = [external_static_libraries_common],
+        cc = compiler,
+        ar = archiver,
+        export_path = True,
+        cpppath = arm_include_path,
+        defines = {"KZ_OPENGL_VERSION" : "KZ_OPENGL_ES_1_1", "_DEBUG" : "1"},
+        use_rpath = False
+    ),
+        
+    "release_es2" : build_configuration (
+        cc_flags = "-O2 " + cflags,
+        shared_libraries = [shared_libraries_es2],
+        static_libraries = [external_static_libraries_common],
+        cc = compiler,
+        ar = archiver,
+        export_path = True,
+        cpppath = arm_include_path,
+        defines = {"KZ_OPENGL_VERSION" : "KZ_OPENGL_ES_2_0"},
+        use_rpath = False
+    ),
+
+    "debug_es2" : build_configuration (
+        cc_flags = "-g -pg " + cflags,
+        shared_libraries = [shared_libraries_es2],
+        static_libraries = [external_static_libraries_common],
+        cc = compiler,
+        ar = archiver,
+        export_path = True,
+        cpppath = arm_include_path,
+        defines = {"KZ_OPENGL_VERSION" : "KZ_OPENGL_ES_2_0", "_DEBUG" : "1"},
+        use_rpath = False
+    ),
+        
+    "default" : "debug_es1"
+} 
+
+build = define_build (
+    build_types = available_build_types,
+    platform = platform,
+    build_root = project_root,
+    global_utilities_path = common_utilities,
+    platform_exclude_strings = platform_exclude_strings
+)
+
+platform_defaults = define_component()
+try: platform_defaults["link_libraries"] = platform_libraries
+except NameError: pass      # platform_libraries not defined, do nothing
+try: platform_defaults["defines"] = platform_defines
+except NameError: pass      # platform_defines not defined, do nothing    
+
+build["platform_options"][build["platform"]]["platform_defaults"] = {"append" : platform_defaults}
+
+#================================================
+# Project components
+#================================================
+
+# Specify the targets that can be built with this scons script
+
+build_component(build, component_root = engine_root, component_name = "System")
+build_component(build, component_root = engine_root, component_name = "Core")
+build_component(build, component_root = engine_root, component_name = "User")
+build_component(build, component_root = engine_root, component_name = "ApplicationFramework")
+
+build_component(build, component_root = project_root, component_name = "binary_viewer")
+
+#build_component(build, component_root = project_root, component_name = "mun_testi")

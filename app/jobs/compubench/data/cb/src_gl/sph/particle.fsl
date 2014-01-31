@@ -1,0 +1,60 @@
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform mat4	_viewMatrix;
+uniform mat4	_modelMatrix;
+uniform mat4	_modelViewMatrix;
+uniform mat4	_modelViewProjectionMatrix;
+uniform vec3	_eyePosition;
+
+varying vec3	eyeVector;
+varying vec4	color;
+
+uniform sampler2D	_diffuseMap;
+uniform sampler2D	_normalMap;
+
+void main() 
+{
+	vec4 texColor = texture2D(_diffuseMap,
+	#ifdef GL_ES
+		gl_PointCoord
+	#else
+		gl_TexCoord[0].xy
+	#endif
+	); //should be gl_PointCoord!
+	if(texColor.a <= 0.01)
+	{
+		discard;
+	}
+
+	vec3 L = vec3(0.0, -1.0, 0.0); // lightDirection
+
+	vec3 N = texture2D(_normalMap,
+	#ifdef GL_ES
+		gl_PointCoord
+	#else
+		gl_TexCoord[0].xy
+	#endif
+	).rgb; //should be gl_PointCoord!
+	N -= 0.5;
+	N *= 2.0;
+
+	N = mat3(_viewMatrix) * N;
+	N = normalize(N);
+
+	float _shininess = 2.0;
+	float _invShineRadius = 40.0;
+	vec3 E = normalize(eyeVector);
+
+	float lambertTerm = dot(N,L);
+	float diffuseScale = max(lambertTerm, 0.0);
+	float specularIntensity = 0.0;
+	if(lambertTerm > 0.0)
+	{
+		vec3 R = reflect(L, N);
+		specularIntensity = _shininess*pow( max(dot(R,E), 0.0), _invShineRadius);
+	}
+
+	gl_FragColor = color * texColor * vec4(vec3(0.3) + 0.7*(vec3(diffuseScale) + vec3(specularIntensity)), 1.0); //to keep alpha zero outside the sphere
+}

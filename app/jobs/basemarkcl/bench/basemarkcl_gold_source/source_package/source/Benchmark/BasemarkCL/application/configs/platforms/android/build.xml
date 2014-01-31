@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BasemarkCL" default="help">
+
+    <property file="local.properties" />
+    <property file="build.properties" />
+    <property file="default.properties" />
+
+    <path id="android.antlibs">
+        <pathelement path="${sdk.dir}/tools/lib/anttasks.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/sdklib.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/androidprefs.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/apkbuilder.jar" />
+        <pathelement path="${sdk.dir}/tools/lib/jarutils.jar" />
+    </path>
+
+    <taskdef name="setup"
+        classname="com.android.ant.SetupTask"
+        classpathref="android.antlibs" />
+    <setup />
+    
+    <taskdef name="aaptexec"
+        classname="com.android.ant.AaptExecLoopTask"
+        classpathref="android.antlibs" />
+    
+    
+    <target name="-pre-build">
+        <echo>Copying resources</echo>
+        
+        <mkdir dir="${asset.absolute.dir}/data"/>
+        <copy todir="${asset.absolute.dir}" file="${asset.absolute.dir}/../../../../bin/application.cfg" />
+        <copy todir="${asset.absolute.dir}" file="${asset.absolute.dir}/../../../../bin/binaries.cfg" />
+        
+        <!-- TODO: Enable!
+        <copy todir="${asset.absolute.dir}/data">
+            <fileset dir="${asset.absolute.dir}/../../../../bin/data">
+                <include name="**/*.cl"/>
+                <include name="**/*.kzb"/>
+                <include name="**/*.png"/>
+                <include name="**/*.mpeg"/>
+            </fileset>
+        </copy>
+        -->
+        
+        <!--
+        <echo>Copying Kanzi Java files</echo>
+        <copy todir="src/com/rightware/kanzi" file="${engine.dir}/sources/application_framework/platforms/android/java/com/rightware/kanzi/KanziActivity.java" />
+        <copy todir="src/com/rightware/kanzi" file="${engine.dir}/sources/application_framework/platforms/android/java/com/rightware/kanzi/KanziNativeLibrary.java" />
+        <copy todir="src/com/rightware/kanzi" file="${engine.dir}/sources/application_framework/platforms/android/java/com/rightware/kanzi/KanziResourceFile.java" />
+        <copy todir="src/com/rightware/kanzi" file="${engine.dir}/sources/application_framework/platforms/android/java/com/rightware/kanzi/KanziView.java" />
+        -->
+    </target>
+    
+    <target name="-post-compile">
+        <!--
+        <echo>Deleting Kanzi Java files</echo>
+        <delete file="src/com/rightware/kanzi/KanziNativeLibrary.java" />
+        <delete file="src/com/rightware/kanzi/KanziResourceFile.java" />
+        <delete file="src/com/rightware/kanzi/KanziView.java" />
+        <delete file="src/com/rightware/kanzi/KanziActivity.java" />
+        -->
+    </target>
+
+    <target name="-package-resources">
+        <echo>Packaging resources in ${asset.absolute.dir}</echo>
+        <aaptexec executable="${aapt}"
+                command="package"
+                manifest="AndroidManifest.xml"
+                assets="${asset.absolute.dir}"
+                androidjar="${android.jar}"
+                apkfolder="${out.absolute.dir}"
+                resourcefilename="${resource.package.file.name}">
+            <res path="${resource.absolute.dir}" />
+            <nocompress extension="kzb" />
+        </aaptexec>
+    </target>      
+
+</project>

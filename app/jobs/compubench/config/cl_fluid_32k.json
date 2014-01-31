@@ -1,0 +1,47 @@
+{
+	"test_id": "cl_fluid",
+	"env": {
+		"graphics": {
+			"versions": [
+				{
+					"type": "GL",
+					"major": 2,
+					"minor": 0
+				},
+				{
+					"type": "ES",
+					"major": 2,
+					"minor": 0
+				}
+			],
+			"config": {
+				"red_size": 8,
+				"green_size": 8,
+				"blue_size": 8,
+				"depth_size": 16,
+				"alpha_size": 0,
+				"samples": -1,
+				"exact": false
+			},
+			"fullscreen": false
+		},
+		"compute": {
+			"type": "CL",
+			"config_index": 0
+		},
+		"locale": "",
+		"width": 1024,
+		"height": 768
+
+	},
+	"raw_config": {
+		"numParticles": 32768,
+		"numParticlesDimX": 32,
+		"numParticlesDimY": 32,
+		"numParticlesDimZ": 32
+	},
+	"title": "Particle Simulation Mobile - 32k",
+	"description": "Particle Simulation in a spatial grid using the discrete element method",
+	"group": "Physics",
+	"test_id_num": "70001"
+}

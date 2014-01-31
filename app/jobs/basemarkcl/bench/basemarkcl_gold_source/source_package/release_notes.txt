@@ -1,0 +1,35 @@
+Basemark CL Release Candidate
+Release notes
+
+--
+
+For detailed information about building and running 
+different OS refer to user guide documentation.
+
+--
+
+Release 1.0.1-3 23.5.2013
+ - Softbody hash changed to represent the fix in 1.0.1
+ - In windows build the results XML is opened by default in IE after running all tests
+ - New configuration file option for device selection (-2) which selects the first GPU device on a platform by default
+
+
+Release 1.0.1 11.9.2012
+ - Fix proposed by intel to avoid race condition
+
+Release 1.0 (21.1.2012)
+ - All floating point constants are now explicitly single precision instead of double.
+ - Changed all functions to use half_ when available to avoid any ambiguities on required precision
+ - Timing is now done using microseconds instead of milliseconds
+ 
+Release candidate 1.0-rc2 (15.11.2011)
+ - Modified 'report.xsl' to show "No OpenGL used." on top of report when no OpenGL is used.
+ - Fixed a bug where video decoding was performed in timed part of the benchmark. The decoding was moved into part which is not timed.
+ - Modified test names in report
+ - Modified reporting to include note on top of the report file if the tests run did not contain all tests
+ - Removed unneeded kernels from SPH
+ - Fixed missing native_ prefix from mandelbulb and made floating point constants floats, not doubles.
+ - Removed -cl-strict-aliasing from the compiler flags as it was deprecated.
+
+Release candidate 1.0-rc (13.10.2011)
+ - Release candidate build

@@ -1,0 +1,13 @@
+<% res = @compare_results[suite] %>
+<tr>
+  <td><%= ('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' * depth + suite.name).html_safe %></td>
+  <td><%= if res.nil? then '---' else res[0] end %></td>
+  <td><%= if res.nil? then '---' else res[1] end %></td>
+  <% if res.nil? %>
+      <td>---</td>
+  <% else %>
+      <td class='<%= if res[3] > 0 then 'success' elsif res[3] < 0 then 'danger' end %>'>
+        <%= if res[2] > 0 then '+' end %><%= res[2].round(2) %>
+      </td>
+  <% end %>
+</tr>

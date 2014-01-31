@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Comparing <%= @lhs_revision.name %> with <%= @rhs_revision.name %> </h1>
+</div>
+
+<blockquote>
+  <p><%= @num_tests_run %> tests were run</p>
+  <p class="text-success">Progressions: <%= @num_progressions %></p>
+  <p class="text-danger">Regressions: <%= @num_regressions %></p>
+</blockquote>
+
+<%-# TODO: This is really bad. -%>
+<table class="table table-condensed table-bordered">
+  <thead><tr>
+    <th>Benchmark name</th>
+    <th><%= @lhs_revision.name %></th>
+    <th><%= @rhs_revision.name %></th>
+    <th>Result</th>
+  </tr></thead>
+
+  <tbody>
+  <% Suite.get_top_level.each do |suite| %>
+      <%= render partial: "compare_row",
+                 locals: {suite: suite,
+                          lhs_revision: @lhs_revision,
+                          rhs_revision: @rhs_revision,
+                          compare_results: @compare_results,
+                          depth: 0} %>
+
+      <% suite.sub_suites.each do |sub_suite| %>
+          <%= render partial: "compare_row",
+                     locals: {suite: sub_suite,
+                              lhs_revision: @lhs_revision,
+                              rhs_revision: @rhs_revision,
+                              compare_results: @compare_results,
+                              depth: 1} %>
+
+          <% sub_suite.sub_suites.each do |subsub_suite| %>
+              <%= render partial: "compare_row",
+                         locals: {suite: subsub_suite,
+                                  lhs_revision: @lhs_revision,
+                                  rhs_revision: @rhs_revision,
+                                  compare_results: @compare_results,
+                                  depth: 2} %>
+          <% end %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

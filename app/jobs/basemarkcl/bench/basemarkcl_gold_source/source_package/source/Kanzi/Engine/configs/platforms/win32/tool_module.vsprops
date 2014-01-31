@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="tool_module"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(KanziEnginePath)\applications\generic\tool_module\src&quot;;&quot;$(KanziEnginePath)\sources\system_layer\platforms\win32_egl\src&quot;;&quot;$(KanziEnginePath)\sources\system_layer\environments\win32\src&quot;;&quot;$(KanziEnginePath)\sources\application_framework\platforms\win32\src\&quot;"
+		PreprocessorDefinitions="KZ_TOOL_MODULE_CONFIGURATION"
+		DisableLanguageExtensions="false"
+		CompileAs="2"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalOptions="/ignore:4248,4075"
+		OutputFile="$(OutDir)\$(ProjectName)_$(ConfigurationName).dll"
+		GenerateManifest="true"
+		AssemblyDebug="1"
+	/>
+	<Tool
+		Name="VCManifestTool"
+		EmbedManifest="true"
+	/>
+</VisualStudioPropertySheet>

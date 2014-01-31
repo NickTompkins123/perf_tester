@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="es2_img"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\libraries\common\opengl_es_2_0\include"
+		PreprocessorDefinitions="KZ_OPENGL_VERSION=KZ_OPENGL_ES_2_0;KZ_OPENGL_PLATFORM=KZ_OPENGL_PLATFORM_NONE"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="libEGL.lib libGLESv2.lib"
+		AdditionalLibraryDirectories="$(KanziEnginePath)\libraries\platforms\win32\opengl_es_2_0\lib"
+	/>
+</VisualStudioPropertySheet>

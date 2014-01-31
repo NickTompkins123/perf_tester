@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="gl_none"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\libraries\common\opengl_es_1_1\include"
+		PreprocessorDefinitions="KZ_OPENGL_VERSION=KZ_OPENGL_NONE;KZ_OPENGL_PLATFORM=KZ_OPENGL_PLATFORM_NONE"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies=""
+		AdditionalLibraryDirectories=""
+	/>
+</VisualStudioPropertySheet>

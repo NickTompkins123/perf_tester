@@ -1,0 +1,4 @@
+
+
+How to compile on windows:
+./configure --disable-yasm --enable-shared --disable-pthreads --enable-memalign-hack

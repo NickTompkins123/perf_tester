@@ -1,0 +1,6 @@
+engine_root = "../../../../../../Kanzi/Engine" 
+project_root = "../../.."
+
+# Hand over the execution over to the actual build script
+execfile(engine_root + "/scripts/build.py")
+    

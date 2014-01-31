@@ -1,0 +1,7 @@
+# The following are automated in the common build.py (or engine_root finding in this file)
+#   but can be manually overridden below
+engine_root = "../../../../Engine"
+
+# Hand over the execution over to the build.py in Engine config 
+execfile(engine_root + "/scripts/build.py")
+    

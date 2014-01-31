@@ -1,0 +1,54 @@
+#ifdef GL_ES
+precision highp float;  
+#endif
+
+uniform mat4 _modelMatrix;
+uniform mat4 _invModelMatrix;
+uniform mat4 _modelViewMatrix;
+uniform mat4 _projectionMatrix;
+uniform vec3 _viewPosition;
+
+attribute vec3 _normal;
+attribute vec3 _vertex;
+
+varying vec3 redRefractTexCoord;
+varying vec3 blueRefractTexCoord;
+varying vec3 greenRefractTexCoord;
+varying vec3 reflectTexCoord;
+varying float ratio;
+
+varying vec3 normal;
+varying vec3 eyeVector;
+varying vec3 lightDirection;
+
+void main()
+{
+	//const float s = 1.0/1.333, ds = 0.005; //0.02
+	//const float s = 1.0, ds = 0.0;
+	const float s = 0.98, ds = 0.005;
+	const vec3 eta = vec3(s+ds, s, s-ds);
+	//const float eta = 1.0/1.333;
+	
+	vec4 p = _modelViewMatrix * vec4(_vertex, 1.0);
+	eyeVector = normalize((_modelMatrix * vec4(_vertex, 1.0)).xyz - _viewPosition);
+	normal = normalize((vec4(_normal, 0.0) * _invModelMatrix).xyz);
+	
+	redRefractTexCoord		= refract(eyeVector, normal, eta.r);
+	greenRefractTexCoord	= refract(eyeVector, normal, eta.g);
+	blueRefractTexCoord		= refract(eyeVector, normal, eta.b);
+	reflectTexCoord			= reflect(eyeVector, normal);
+	
+	redRefractTexCoord.y	*= -1.0;
+	greenRefractTexCoord.y	*= -1.0;
+	blueRefractTexCoord.y	*= -1.0;
+	reflectTexCoord.y		*= -1.0;
+	
+	const float f = ((1.0-s)*(1.0-s))/((1.0+s)*(1.0+s));
+	const float fresnel_pow = 5.0;
+	ratio = f + (1.0 - f)*pow((1.0 - dot(-eyeVector, normal)), fresnel_pow);
+	ratio = clamp(ratio, 0.0, 1.0);
+
+	lightDirection = vec3(0.0, -1.0, 0.0);
+	
+	gl_Position = _projectionMatrix * p;
+}

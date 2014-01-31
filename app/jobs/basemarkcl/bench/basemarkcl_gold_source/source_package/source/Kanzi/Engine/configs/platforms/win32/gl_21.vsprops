@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="gl_21"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(KanziEnginePath)\libraries\common\opengl_2_1\include"
+		PreprocessorDefinitions="KZ_OPENGL_VERSION=KZ_OPENGL_2_1;KZ_OPENGL_PLATFORM=KZ_OPENGL_PLATFORM_DESKTOP"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="OpenGL32.lib glut32.lib glu32.lib"
+		AdditionalLibraryDirectories="$(KanziEnginePath)\libraries\platforms\win32\opengl_2_1\lib"
+	/>
+</VisualStudioPropertySheet>

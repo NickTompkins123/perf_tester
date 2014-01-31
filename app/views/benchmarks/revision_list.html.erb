@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1>Revisions list <small>List of all known benchmark results</small></h1>
+</div>
+
+<% if @left_side_revision %>
+<div class="alert alert-success">
+  Select revision to compare with <b><%= @left_side_revision.name %></b>
+</div>
+<% end %>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead><tr><th>Name</th> <th>Description</th> <th>Date</th> <th>Action</th></tr></thead>
+  <tbody data-link="row" class="rowlink">
+    <% @revisions.each do |revision| %>
+      <tr>
+        <td><%= link_to revision.name, measurements_list_path(revision.id) %></td>
+        <td><%= revision.description %></td>
+        <td><%= revision.created_at %></td>
+        <td class="rowlink-skip">
+          <%=
+            if @left_side_revision
+              link_to "Compare", do_compare_path(@left_side_revision.id, revision.id)
+            else
+              link_to "Compare with", select_rhs_compare_path(revision.id)
+            end
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

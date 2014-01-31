@@ -1,0 +1,45 @@
+{
+	"test_id": "cl_video_processing",
+	"env": {
+		"graphics": {
+			"versions": [
+				{
+					"type": "GL",
+					"major": 2,
+					"minor": 0
+				},
+				{
+					"type": "ES",
+					"major": 2,
+					"minor": 0
+				}
+			],
+			"config": {
+				"red_size": 8,
+				"green_size": 8,
+				"blue_size": 8,
+				"depth_size": 16,
+				"alpha_size": 0,
+				"samples": -1,
+				"exact": false
+			},
+			"fullscreen": false
+		},
+		"compute": {
+			"type": "CL",
+			"config_index": 0
+		},
+		"locale": "",
+		"width": 1024,
+		"height": 768
+	},
+	"raw_config": {
+		"filterType": "Gauss",
+		"fileNum": 15,
+		"fileName": "media/video/bigger_boat_"
+	},
+	"title": "Separated Gaussian Blur - Global memory usage",
+	"description": "Gaussian blur filter demonstrated on video.",
+	"group": "Video Processing",
+	"test_id_num": "90003"
+}

@@ -1,0 +1,16 @@
+#ifdef GL_ES
+precision highp float;  
+#endif
+
+uniform mat4	_modelViewProjectionMatrix;
+
+attribute vec2  _texCoord;
+attribute vec3	_vertex;
+
+varying vec2	texCoord;
+
+void main()
+{
+	gl_Position = _modelViewProjectionMatrix * vec4(_vertex, 1.0);
+	texCoord = _texCoord; 
+}

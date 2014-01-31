@@ -1,0 +1,7 @@
+# Type      Name                        Configuration                    Source path
+
+# Applications
+program     openclbenchmark %PROJECT_PATH%\configs\lint\clmark.lnt        application\sources\clmark
+library     clutil          %PROJECT_PATH%\configs\lint\clutil.lnt        application\sources\clutil
+library     benchmarkutil   %PROJECT_PATH%\configs\lint\benchmarkutil.lnt application\sources\benchmarkutil
+
