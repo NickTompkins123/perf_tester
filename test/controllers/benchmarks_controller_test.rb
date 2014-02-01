@@ -54,11 +54,11 @@ class BenchmarksControllerTest < ActionController::TestCase
 
     old_count = Measurement.count
     # Check that revision is added
-#    assert_difference('Revision.count') do
-#      post :run_benchmarks, revision: {name: 'Test running new revision',
-#                                       path: 'No path',
-#                                       description: 'testing'}
-#    end
+    assert_difference('Revision.count') do
+      post :run_benchmarks, revision: {name: 'Test running new revision',
+                                       path: 'No path',
+                                       description: 'testing'}
+    end
 
     # Check that there is any difference in amount of measurements
     # Which means at least some benchmarks were run

@@ -16,6 +16,6 @@
 /tmp
 
 # Ignore all bat files
-/.bat
+*.bat
 
 /.idea

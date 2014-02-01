@@ -29,7 +29,6 @@ class JobTest < ActionController::TestCase
     assert_equal 4, res.length
   end
 
-=begin
   test "dummy benchmark" do
     new_rev = Revision.create(name: 'DUMMY_TEST',
                               path: 'no path',
@@ -78,7 +77,6 @@ class JobTest < ActionController::TestCase
     assert_not_nil m
     assert_not_equal 0, m.value
     end
-=end
 
   test "basemarkcl" do
     new_rev = Revision.create(name: 'BASEMARK_TEST',
