@@ -38,12 +38,15 @@ perf_tester -*- mode: org -*-
 
 ** Release!
 *** DONE GitHub
-*** Tests on dev machine
-*** Install server
+*** DONE Tests on dev machine
+*** DONE Install server
 *** Set up worker
 *** Ensure that all env is correctly set
 *** Check that results are reliable
 *** Tune good_or_bad threshold to reduce false regressions
+*** Invalid display of errors
+*** Deal with warning
+*** Do something with dist path
 
 ** Refactor
 *** !!! Add measurements via add_or_update_measurement method in suite. It will prevent multiple measurements in case of failed jobs

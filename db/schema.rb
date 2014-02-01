@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140127203024) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.string   "env",         default: "HSA_RUNTIME=1;"
+    t.string   "env",         default: "GPU_HSAIL_ENABLE=1"
   end
 
   create_table "suites", force: true do |t|

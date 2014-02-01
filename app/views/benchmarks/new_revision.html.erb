@@ -5,7 +5,7 @@
 <%= form_for @revision, url: {action: 'run_benchmarks'}, html: {role: "form"} do |f| %>
 
   <% @revision.errors.full_messages.each do |msg| %>
-    <div class="alert alert-error"><%= msg %></div>
+    <div class="alert alert-danger"><%= msg %></div>
   <% end %>
 
   <div class="form-group">
