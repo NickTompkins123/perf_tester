@@ -37,9 +37,10 @@ perf_tester -*- mode: org -*-
 ** DONE Add BasemarkCL
 
 ** Release!
-*** GitHub
+*** DONE GitHub
 *** Tests on dev machine
 *** Install server
+*** Set up worker
 *** Ensure that all env is correctly set
 *** Check that results are reliable
 *** Tune good_or_bad threshold to reduce false regressions
