@@ -17,3 +17,5 @@
 
 # Ignore all bat files
 /.bat
+
+/.idea
