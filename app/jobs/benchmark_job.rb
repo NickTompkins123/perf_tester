@@ -32,7 +32,7 @@ protected
   end
 
   def self.interpret_compare_result(percentage, suite)
-    if percentage >= 10 then 1 elsif percentage <= -10 then -1 else 0 end
+    if percentage >= 5 then 1 elsif percentage <= -5 then -1 else 0 end
   end
 
   def setup_env
