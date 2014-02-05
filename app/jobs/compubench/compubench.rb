@@ -21,7 +21,7 @@ class CompuBenchJob < BenchmarkJob
 
   def setup_env
     super
-    ENV['PATH'] = ENV['PATH'] + ';' + File.join(revision.path, 'bin/x86/')
+    ENV['PATH'] = ENV['PATH'] + ';' + File.join(revision.get_path, 'bin/x86/')
   end
 
   def execute_benchmark

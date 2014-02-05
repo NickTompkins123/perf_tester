@@ -43,7 +43,7 @@ class Shoc32BenchmarkJob < BaseShocBenchmarkJob
 
   def setup_env
     super
-    ENV['PATH'] = ENV['PATH'] + ';' + File.join(revision.path, 'bin/x86/')
+    ENV['PATH'] = ENV['PATH'] + ';' + File.join(revision.get_path, 'bin/x86/')
   end
 end
 
@@ -54,7 +54,7 @@ class Shoc64BenchmarkJob < BaseShocBenchmarkJob
 
   def setup_env
     super
-    ENV['PATH'] = ENV['PATH'] + ';' + File.join(revision.path, 'bin/x86_64/')
+    ENV['PATH'] = ENV['PATH'] + ';' + File.join(revision.get_path, 'bin/x86_64/')
   end
 end
 

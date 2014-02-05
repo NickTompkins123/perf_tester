@@ -1,4 +1,4 @@
-<div class="page-header">
+﻿<div class="page-header">
   <h1>Start new benchmarking session</h1>
 </div>
 
@@ -13,7 +13,8 @@
     <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= label_tag(:revision_path, "Path for this revision:") %>
+    <%= label_tag(:revision_path, "Name of the folder containing dist:") %>
+    <p class="help-block">This folder should be placed into \\spb-hlc-kv8\Users\ilaevsky\dists\</p>
     <%= f.text_field :path, class: "form-control" %>
   </div>
 

@@ -16,12 +16,12 @@ class JobTest < ActionController::TestCase
     b.send(:setup_env) # it is protected method, bypass that fact
     assert_equal ENV['HSA_RUNTIME'], '1'
     assert_equal ENV['SOME_VAR'], 'Hello world'
-    assert_not_nil ENV['PATH'].split(/;/).index('C:/Projects/dist.920000/bin/x86/')
+    assert_not_nil ENV['PATH'].split(/;/).index(File.join(revisions(:fst).get_path, '/bin/x86/'))
 
     b.send(:clean_env)
     assert_nil ENV['HSA_RUNTIME']
     assert_nil ENV['SOME_VAR']
-    assert_nil ENV['PATH'].split(/;/).index('C:/Projects/dist.920000/bin/x86/')
+    assert_nil ENV['PATH'].split(/;/).index(File.join(revisions(:fst).get_path, '/bin/x86/'))
   end
 
   test "results compare" do
