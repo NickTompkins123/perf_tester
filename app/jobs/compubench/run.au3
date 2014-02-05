@@ -1,6 +1,8 @@
 Run("bin/CompuBench.exe")
 
-WinWaitActive("CompuBench")
+#WinWaitActive("CompuBench")
+WinWait("CompuBench")
+WinActivate("CompuBench")
 
 WinSetState("CompuBench", "", @SW_MAXIMIZE)
 
@@ -9,7 +11,6 @@ WinSetState("CompuBench", "", @SW_MAXIMIZE)
 #MouseClick("left", 227, 248)
 
 MouseClick("left", 1190, 705)
-
 
 While NOT WinExists('BenchmarkPage')
     Sleep(1000)
