@@ -4,7 +4,7 @@ fst:
   name: 920000
   path: C:/Projects/dist.920000/
   description: Some cool description
-  env: HSA_RUNTIME=1;SOME_VAR="Hello world"
+  env: HSA_RUNTIME=1;SOME_VAR="-Wb,-unroll-threshold=100"
 
 scnd:
   name: 920001

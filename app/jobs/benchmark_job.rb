@@ -41,7 +41,10 @@ protected
     @new_env_vars = []
     revision.env.split(/;/).map{|t| t.strip}.each do |assignment|
       if assignment
-        name, val = assignment.split(/=/).map{|t| t.strip}
+        name, *val = assignment.split(/=/).map{|t| t.strip}
+        # In case if equality sign was used inside value
+        # e.g T="Hello=world"
+        val = val.join('=')
 
         name = Shellwords.shellwords(name)[0]
         val = Shellwords.shellwords(val)[0]

@@ -40,13 +40,16 @@ perf_tester -*- mode: org -*-
 *** DONE GitHub
 *** DONE Tests on dev machine
 *** DONE Install server
-*** Set up worker
-*** Ensure that all env is correctly set
+*** DONE Invalid display of errors
+*** DONE Set up worker
+*** DONE Ensure that all env is correctly set
+*** DONE Do something with dist path
+*** DONE Fix CompuBench
+*** DONE Tune good_or_bad threshold to reduce false regressions
+*** Run in production
 *** Check that results are reliable
-*** Tune good_or_bad threshold to reduce false regressions
-*** Invalid display of errors
 *** Deal with warning
-*** Do something with dist path
+*** Sync clocks
 
 ** Refactor
 *** !!! Add measurements via add_or_update_measurement method in suite. It will prevent multiple measurements in case of failed jobs
